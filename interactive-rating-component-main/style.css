@@ -1,0 +1,143 @@
+:root {
+	--primary: hsl(25, 97%, 53%);
+	--white: hsl(0, 0%, 100%);
+	--lightGrey: hsl(217, 12%, 63%);
+	--mediumGrey: hsl(216, 12%, 54%);
+	--darkBlue: hsl(213, 19%, 18%);
+	--veryDarkBlue: hsl(216, 12%, 8%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Overpass", sans-serif;
+	background: hsl(216, 12%, 8%);
+}
+
+.container {
+	height: 100vh;
+	display: grid;
+	place-items: center;
+}
+
+.card {
+	width: 400px;
+	background-color: var(--darkBlue);
+	padding: 35px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	border-radius: 25px;
+}
+
+@media screen and (max-width: 425px) {
+    .card {
+        width: 90%;
+    }
+}
+
+.card .icon,
+.rating__item {
+	width: 50px;
+	height: 50px;
+	display: grid;
+	place-items: center;
+	border-radius: 50%;
+	background: hsl(213, 19%, 22%);
+}
+
+.card h2 {
+	color: var(--white);
+	font-weight: 700;
+}
+
+.card p {
+	color: var(--lightGrey);
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 1.5rem;
+}
+
+.card.hide {
+	display: none;
+}
+
+.rating {
+	display: flex;
+	justify-content: space-between;
+}
+
+.rating__item {
+	color: var(--lightGrey);
+	font-weight: 700;
+	cursor: pointer;
+	margin: 10px 0;
+}
+
+.rating__item:hover {
+	background: var(--mediumGrey);
+	color: var(--white);
+}
+
+.rating__item.active {
+	background: var(--primary);
+	color: var(--white);
+}
+
+.button {
+	border: none;
+	background: var(--primary);
+	padding: 15px 0;
+	border-radius: 25px;
+	color: var(--white);
+	font-weight: 700;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+.button:hover {
+	background: var(--white);
+	color: var(--primary);
+}
+
+#result.card {
+	justify-content: center;
+	align-items: center;
+}
+
+#result.card p {
+    text-align: center;
+}
+
+.badge {
+	background: hsl(213, 19%, 22%);
+	color: var(--primary);
+    font-size: 15px;
+    font-weight: 400;
+    padding: 5px 20px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+
+.attribution {
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: var(--white);
+	font-size: 12px;
+}
+
+.attribution a {
+	color: rgb(51, 122, 255);
+}
+
+@media screen and (max-width: 425px) {
+    .attribution {
+        display: none;
+    }
+}
