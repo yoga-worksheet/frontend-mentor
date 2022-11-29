@@ -1,0 +1,113 @@
+:root {
+	--LightCyan: hsl(193, 38%, 86%);
+	--NeonGreen: hsl(150, 100%, 66%);
+	--GrayishBlue: hsl(217, 19%, 38%);
+	--DarkGrayishBlue: hsl(217, 19%, 24%);
+	--DarkBlue: hsl(218, 23%, 16%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--DarkBlue);
+	font-family: sans-serif;
+}
+
+.container {
+	height: 100vh;
+	display: grid;
+	place-items: center;
+}
+
+.card {
+	width: 550px;
+	text-align: center;
+	background-color: var(--DarkGrayishBlue);
+	border-radius: 15px;
+	padding: 40px;
+	position: relative;
+}
+
+.card .label {
+	color: var(--NeonGreen);
+	letter-spacing: 5px;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.card blockquote {
+	font-size: 28px;
+	font-family: "Manrope", sans-serif;
+	margin: 30px 0;
+	color: var(--LightCyan);
+}
+
+.card .divider {
+	margin-bottom: 30px;
+    display: grid;
+    place-items: center;
+}
+
+.divider img {
+    width: 100%;
+}
+
+.divider img:nth-child(2) {
+	display: none;
+}
+
+.card .button {
+	position: absolute;
+	bottom: -30px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60px;
+	height: 60px;
+	border: none;
+	border-radius: 50%;
+	background-color: var(--NeonGreen);
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+}
+
+.card .button:hover {
+	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1), 0 0 20px 5px var(--NeonGreen);
+}
+
+.attribution {
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 12px;
+	color: var(--LightCyan);
+}
+
+.attribution a {
+	color: var(--NeonGreen);
+	text-decoration: none;
+}
+
+@media screen and (max-width: 550px) {
+	.card {
+		width: 90%;
+		padding: 25px;
+	}
+
+	.divider img:nth-child(1) {
+		display: none;
+	}
+
+	.divider img:nth-child(2) {
+		display: block;
+	}
+
+    .attribution {
+        display: none;
+    }
+}
