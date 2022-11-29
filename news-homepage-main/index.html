@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+
+		<title>Frontend Mentor | News homepage</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<nav>
+			<div class="logo">
+				<img src="assets/images/logo.svg" alt="logo" />
+			</div>
+			<ul class="menu">
+				<li class="menu__item"><a href="#">Home</a></li>
+				<li class="menu__item"><a href="#">New</a></li>
+				<li class="menu__item"><a href="#">Popular</a></li>
+				<li class="menu__item"><a href="#">Trending</a></li>
+				<li class="menu__item"><a href="#">Categories</a></li>
+			</ul>
+			<button class="hamburger">
+				<img
+					class="open"
+					src="assets/images/icon-menu.svg"
+					alt="menu"
+				/>
+				<img
+					class="close"
+					src="assets/images/icon-menu-close.svg"
+					alt="close"
+				/>
+			</button>
+		</nav>
+
+		<div class="wrapper" id="sidemenu">
+			<div class="sidenav">
+				<ul class="menu">
+					<li class="menu__item"><a href="#">Home</a></li>
+					<li class="menu__item"><a href="#">New</a></li>
+					<li class="menu__item"><a href="#">Popular</a></li>
+					<li class="menu__item"><a href="#">Trending</a></li>
+					<li class="menu__item"><a href="#">Categories</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="container">
+			<section class="intro">
+				<div class="hero">
+					<div class="hero__image">
+						<img
+							src="assets/images/image-web-3-desktop.jpg"
+							alt="web 3"
+						/>
+						<img
+							src="assets/images/image-web-3-mobile.jpg"
+							alt="web 3"
+						/>
+					</div>
+					<h1 class="hero__title">The Bright Future of Web 3.0?</h1>
+					<div class="hero__description">
+						<p>
+							We dive into the next evolution of the web that
+							claims to put the power of the platforms back into
+							the hands of the people. But is it really fulfilling
+							its promise?
+						</p>
+						<button class="button">READ MORE</button>
+					</div>
+				</div>
+				<aside class="latest-news">
+					<h2 class="title">New</h2>
+					<div class="news">
+						<div class="news__item">
+							<h3><a href="#">Hydrogen VS Electric Cars</a></h3>
+							<p>
+								Will hydrogen-fueled cars ever catch up to EVs?
+							</p>
+						</div>
+						<div class="news__item">
+							<h3>
+								<a href="#">The Downsides of AI Artistry</a>
+							</h3>
+							<p>
+								What are the possible adverse effects of
+								on-demand AI image generation?
+							</p>
+						</div>
+						<div class="news__item">
+							<h3><a href="#">Is VC Funding Drying Up?</a></h3>
+							<p>
+								Private funding by VC firms is down 50% YOY. We
+								take a look at what that means.
+							</p>
+						</div>
+					</div>
+				</aside>
+			</section>
+
+			<section class="popular-news">
+				<div class="popular__item">
+					<div class="popular__image">
+						<img
+							src="assets/images/image-retro-pcs.jpg"
+							alt="retro pc"
+						/>
+					</div>
+					<div class="details">
+						<h2>01</h2>
+						<h3><a href="">Reviving Retro PCs</a></h3>
+						<p>
+							What happens when old PCs are given modern upgrades?
+						</p>
+					</div>
+				</div>
+
+				<div class="popular__item">
+					<div class="popular__image">
+						<img
+							src="assets/images/image-top-laptops.jpg"
+							alt="retro pc"
+						/>
+					</div>
+					<div class="details">
+						<h2>02</h2>
+						<h3><a href="">Top 10 Laptops of 2022</a></h3>
+						<p>Our best picks for various needs and budgets.</p>
+					</div>
+				</div>
+
+				<div class="popular__item">
+					<div class="popular__image">
+						<img
+							src="assets/images/image-gaming-growth.jpg"
+							alt="retro pc"
+						/>
+					</div>
+					<div class="details">
+						<h2>03</h2>
+						<h3><a href="">The Growth of Gaming</a></h3>
+						<p>How the pandemic has sparked fresh opportunities.</p>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<div class="attribution">
+			Challenge by
+			<a
+				href="https://www.frontendmentor.io?ref=challenge"
+				target="_blank"
+				>Frontend Mentor</a
+			>. Coded by <a href="#">Yoga Pratama</a>.
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
