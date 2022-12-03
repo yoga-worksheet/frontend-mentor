@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<title>Frontend Mentor | Calculator app</title>
+
+		<!-- Custom Style -->
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<main>
+			<div class="container">
+				<header>
+					<h1>calc</h1>
+					<div class="theme-selector">
+						<span>THEME</span>
+						<div class="theme-switch">
+							<div class="number">
+								<span>1</span>
+								<span>2</span>
+								<span>3</span>
+							</div>
+							<div class="switcher">
+								<span id="theme-1"></span>
+								<span id="theme-2"></span>
+								<span id="theme-3"></span>
+							</div>
+						</div>
+					</div>
+				</header>
+				<div class="screen">
+					<span>0</span>
+				</div>
+				<div class="numpad">
+					<button class="btn-white number">7</button>
+					<button class="btn-white number">8</button>
+					<button class="btn-white number">9</button>
+					<button id="delete" class="btn-blue">DEL</button>
+					<button class="btn-white number">4</button>
+					<button class="btn-white number">5</button>
+					<button class="btn-white number">6</button>
+					<button class="btn-white operator">+</button>
+					<button class="btn-white number">1</button>
+					<button class="btn-white number">2</button>
+					<button class="btn-white number">3</button>
+					<button class="btn-white operator">-</button>
+					<button id="point" class="btn-white">.</button>
+					<button class="btn-white number">0</button>
+					<button class="btn-white operator">/</button>
+					<button class="btn-white operator">x</button>
+					<button id="reset" class="btn-blue two-column">
+						RESET
+					</button>
+					<button id="result" class="btn-red two-column">=</button>
+				</div>
+			</div>
+		</main>
+		
+		<script src="script.js" type="module"></script>
+	</body>
+</html>

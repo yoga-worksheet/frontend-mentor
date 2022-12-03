@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+
+:root {
+	--color-scheme: light dark;
+	--backgroundColor: hsl(222, 26%, 31%);
+	--toggleKeypadBackgroundColor: hsl(223, 31%, 20%);
+	--screen: hsl(224, 36%, 15%);
+	--ClearKey: hsl(225, 21%, 49%);
+	--ClearShadow: hsl(224, 28%, 35%);
+	--ClearHover: hsl(225, 33%, 72%);
+	--ResultKey: hsl(6, 63%, 50%);
+	--ResultShadow: hsl(6, 70%, 34%);
+	--ResultHover: hsl(6, 62%, 58%);
+	--NormalKey: hsl(30, 25%, 89%);
+	--NormalShadow: hsl(28, 16%, 65%);
+	--NormalHover: hsl(0, 0%, 100%);
+	--TextDark: hsl(221, 14%, 31%);
+	--TextWhite: hsl(0, 0%, 100%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "League Spartan", sans-serif;
+	background: var(--backgroundColor);
+	color: var(--TextWhite);
+	transition: all 0.2s ease-in;
+}
+
+main {
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	place-items: center;
+}
+
+.container {
+	width: 100%;
+	padding: 25px;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 25px;
+}
+
+.container.theme {
+	color: var(--TextDark);
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.theme-selector {
+	display: flex;
+	gap: 20px;
+	align-items: flex-end;
+}
+
+.theme-selector > span {
+	font-size: 12px;
+	letter-spacing: 1px;
+	margin-bottom: 5px;
+}
+
+.theme-switch .number {
+	display: flex;
+	justify-content: space-around;
+	width: 70px;
+	margin-bottom: 5px;
+}
+
+.theme-switch .number span {
+	font-size: 12px;
+}
+
+.theme-switch .switcher {
+	background: var(--toggleKeypadBackgroundColor);
+	width: 100%;
+	height: 25px;
+	border-radius: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.theme-switch .switcher span {
+	display: block;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: var(--ResultKey);
+	cursor: pointer;
+	opacity: 0;
+	transition: all 0.2s ease-in-out;
+}
+
+.theme-switch .switcher span.active {
+	opacity: 1;
+}
+
+.screen {
+	background: var(--screen);
+	padding: 25px;
+	border-radius: 10px;
+}
+
+.screen > span {
+	font-size: 36px;
+	float: right;
+}
+
+.numpad {
+	padding: 25px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 55px);
+	gap: 15px;
+	background: var(--toggleKeypadBackgroundColor);
+	border-radius: 10px;
+}
+
+.two-column {
+	grid-column: span 2;
+}
+
+.numpad button {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	border: none;
+	font-size: 32px;
+	font-family: "League Spartan", sans-serif;
+	font-weight: 700;
+	display: grid;
+	place-items: center;
+	padding-top: 10px;
+	cursor: pointer;
+	transition: all 0.1s ease-in;
+}
+
+.btn-white {
+	background: var(--NormalKey);
+	color: var(--TextDark);
+	box-shadow: 0 5px var(--NormalShadow);
+}
+
+.btn-white:hover {
+	background: var(--NormalHover);
+}
+
+.btn-blue {
+	font-size: 20px !important;
+	padding-top: 5px !important;
+	background: var(--ClearKey);
+	color: var(--TextWhite);
+	box-shadow: 0 5px var(--ClearShadow);
+}
+
+.btn-blue:hover {
+	background: var(--ClearHover);
+}
+
+.btn-red {
+	font-size: 20px !important;
+	background: var(--ResultKey);
+	color: var(--TextWhite);
+	box-shadow: 0 5px var(--ResultShadow);
+}
+
+.btn-red:hover {
+	background: var(--ResultHover);
+}
+
+@media screen and (min-width: 525px) {
+	.container {
+		width: 500px;
+		padding: 0;
+	}
+}
