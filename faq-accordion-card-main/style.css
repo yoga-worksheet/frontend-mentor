@@ -1,0 +1,204 @@
+:root {
+	--NormalHeading: hsl(237, 12%, 33%);
+	--SelectedHeading: hsl(238, 29%, 16%);
+	--Text: hsl(240, 6%, 50%);
+	--Hover: hsl(14, 88%, 65%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Kumbh Sans", sans-serif;
+	background: linear-gradient(
+		0deg,
+		hsl(240, 73%, 65%) 0%,
+		hsl(273, 75%, 66%) 100%
+	);
+}
+
+main {
+	width: 100%;
+	min-height: 100vh;
+	display: grid;
+	place-content: center;
+}
+
+.card {
+	margin: 0 auto;
+	width: 900px;
+	min-height: 500px;
+	border-radius: 20px;
+	background: white;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	box-shadow: -5px 15px 30px hsla(238, 29%, 16%, 0.3);
+}
+
+.card__image,
+.card__body {
+	width: 50%;
+}
+
+.card__image {
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.card__image::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url("images/illustration-woman-online-desktop.svg") no-repeat;
+	background-size: contain;
+	top: 15%;
+	left: calc(-10% - 20px);
+}
+
+.card__image::before {
+	content: "";
+	position: absolute;
+	width: 110vw;
+	height: 110vh;
+	background: url("images/bg-pattern-desktop.svg") no-repeat;
+	background-size: contain;
+	top: -30%;
+	left: -80%;
+}
+
+.card__image img {
+	transform: translateX(-15%);
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.card__body {
+	padding: 50px;
+	display: grid;
+	place-content: center;
+}
+
+.card__body h1 {
+	margin-bottom: 30px;
+	font-weight: 700;
+	color: var(--SelectedHeading);
+}
+
+.accordion li {
+	list-style: none;
+	font-size: 12px;
+	padding-right: 10px;
+	border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+
+.accordion li label {
+	padding: 15px 0 10px;
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--NormalHeading);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	transition: color 0.1s ease-in;
+}
+
+.accordion li input[type="radio"]:not(:checked) + label:hover {
+	color: var(--Hover);
+}
+
+.accordion li input[type="radio"] {
+	display: none;
+}
+
+.accordion li p {
+	overflow: hidden;
+	max-height: 0;
+	color: var(--Text);
+	margin-bottom: 10px;
+	transition: max-height 0.5s ease-in-out;
+}
+
+.accordion input[type="radio"]:checked + label img {
+	transform: rotate(180deg);
+}
+
+.accordion input[type="radio"]:checked ~ p {
+	max-height: 400px;
+}
+
+.accordion li input[type="radio"]:checked + label {
+	font-weight: 700;
+}
+
+.box {
+	position: absolute;
+	top: 40%;
+	left: -11%;
+	transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.accordion > li:hover ~ .box {
+	transform: translateX(-35px);
+}
+
+@media screen and (max-width: 900px) {
+	main {
+		padding: 160px 0 100px 0;
+	}
+
+	.card {
+		width: 90%;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.card__image {
+		position: absolute;
+		width: 70%;
+		height: 70%;
+		pointer-events: none;
+		overflow: visible;
+	}
+
+	.card__image::before,
+	.card__image::after {
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	.card__image::before {
+		background: url("images/bg-pattern-mobile.svg") no-repeat;
+	}
+
+	.card__image::after {
+		background: url("images/illustration-woman-online-mobile.svg") no-repeat;
+		top: calc(-30% + 5px);
+	}
+
+	.card__body {
+		margin-top: 100px;
+		padding: 25px;
+		padding-bottom: 50px;
+		width: 100%;
+	}
+
+	.card__body h1 {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.box {
+		display: none;
+	}
+}
